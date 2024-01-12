@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LabTest.Q3"
+             Title="Q3">
+    <StackLayout>
+        <CollectionView x:Name="PostsCollectionView" ItemsSource="{Binding Posts}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding Title}" />
+                        <Label Text="{Binding Body}" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="10">
+            <Entry Placeholder="Title" x:Name="TitleEntry" />
+            <Entry Placeholder="Body" x:Name="BodyEntry" />
+
+            <Button Text="SAVE" Command="{Binding AddOrUpdateCommand}" />
+            <Button Text="UPDATE" Command="{Binding AddOrUpdateCommand}" />
+            <Button Text="DELETE" Command="{Binding DeleteCommand}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
